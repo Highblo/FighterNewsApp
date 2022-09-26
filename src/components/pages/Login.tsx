@@ -40,7 +40,7 @@ export const Login: FC = memo(() => {
         w={{ base: "sm", md: "md" }} 
         p={4} 
         borderRadius="md" 
-        m={4} 
+        m={4}
         shadow="xl"
       >
         <Stack spacing="5" py={4} px={8}>

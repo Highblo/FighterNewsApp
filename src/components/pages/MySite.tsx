@@ -10,6 +10,7 @@ export const MySite: FC = memo(() => {
       mx="auto" 
       mt={{ base: "40px", md: "100px" }} 
       justify="center"
+      h="77.7vh"
     >
       <Box>
         <Box 

@@ -1,5 +1,5 @@
 import { Box, Flex, Heading, Link } from "@chakra-ui/react";
-import { FC, memo } from "react";
+import { FC, memo} from "react";
 import { useHistory } from "react-router-dom";
 
 export const Header: FC = memo(() => {
@@ -7,8 +7,9 @@ export const Header: FC = memo(() => {
 
   const onClickMySite = () => history.push("/news/mysite");
   const onClickNews = () => history.push("/news");
- 
+
   return (
+    <>
     <Box bg="#282c34">
       <Flex 
         as="div" 
@@ -41,5 +42,6 @@ export const Header: FC = memo(() => {
         </Box>
       </Flex>
     </Box>
+    </>
   );
 });

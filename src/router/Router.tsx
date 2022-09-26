@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 
 import { Login } from "../components/pages/Login";
 import { Page404 } from "../components/pages/Page404";
-import { HeaderLayout } from "../components/templates/HeaderLayout";
+import { PageLayout } from "../components/templates/PageLayout";
 import { NewsRoutes } from "./NewsRoutes";
 
 export const Router: FC = memo(() => {
@@ -20,7 +20,7 @@ export const Router: FC = memo(() => {
               path={`${url}${route.path}`}
               exact={route.exact}
             >
-              <HeaderLayout>{route.children}</HeaderLayout>
+              <PageLayout>{route.children}</PageLayout>
             </Route>
           ))}
         </Switch>
