@@ -17,8 +17,8 @@ export const News: FC = memo(() => {
   }, [serch]);
 
   useEffect(() => {
-    getData(serch)
-    setSerch("")
+    getData(serch);
+    setSerch("");
   }, []);
 
   return (

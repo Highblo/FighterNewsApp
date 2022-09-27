@@ -7,10 +7,9 @@ export const MySite: FC = memo(() => {
   return (
     <Flex 
       maxW="1200px" 
-      mx="auto" 
+      mx="auto"
       mt={{ base: "40px", md: "100px" }} 
       justify="center"
-      h="77.7vh"
     >
       <Box>
         <Box 
@@ -30,7 +29,7 @@ export const MySite: FC = memo(() => {
             />
           </Link>
         </Box>
-        <Box textAlign="center" p={4}>
+        <Box textAlign="center" p={4} mb={8}>
           <ExplanationText 
             text1="*使用技術" 
             text2="HTML/CSS/Javascript"
