@@ -20,4 +20,4 @@ export const useGetData = () => {
     .finally(() => setNewsLoading(false));
   }, []);
   return { articles, getData, newsLoading };
-}
+};

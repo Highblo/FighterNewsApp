@@ -5,13 +5,8 @@ import { ExplanationText } from "../molcules/ExplanationText";
 
 export const MySite: FC = memo(() => {
   return (
-    <Flex 
-      maxW="1200px" 
-      mx="auto"
-      mt={{ base: "40px", md: "100px" }} 
-      justify="center"
-    >
-      <Box>
+    <Flex justify="center" align="center" minH="88vh">
+      <Box maxW="1200px" p={2} mt={{ base: 3, md: 0 }}>
         <Box 
           w={{ base: "80%", md: "70%" }} 
           h={{ base: "200px", md: "300px" }} 

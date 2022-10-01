@@ -1,24 +1,35 @@
 import { Box, Center, Flex, Heading, Image, Link, Spinner, Text } from "@chakra-ui/react";
-import { FC, memo, useEffect, useCallback, useState } from "react";
+import { FC, memo, useEffect, useContext, useCallback } from "react";
 
 import { useGetData } from "../../hooks/useGetData";
+import { SerchContext } from "../../providers/SerchProvider";
 import { Category } from "../organisms/Category";
 
 export const News: FC = memo(() => {
   const { articles, getData, newsLoading } = useGetData();
-  const [serch, setSerch] = useState("格闘技");
+  const { serch, setSerch } = useContext(SerchContext);
 
-  const onChangeSerch = useCallback((e: React.ChangeEvent<HTMLInputElement>) => setSerch(e.target.value), []);
-
-  const categorySerch = useCallback(() => {
+  useEffect(() => {
+    getData("格闘技");
+  }, []);
+  
+  const onClickSerch = useCallback(() => {
     if(serch === "") return;
     getData(serch);
     setSerch("");
   }, [serch]);
 
-  useEffect(() => {
-    getData(serch);
-    setSerch("");
+  const onClickMMA = useCallback(() => {
+    getData("MMA");
+  }, []);
+  const onClickBoxing = useCallback(() => {
+    getData("ボクシング");
+  }, []);
+  const onClickKickBoxing = useCallback(() => {
+    getData("キックボクシング");
+  }, []);
+  const onClickJiujitsu = useCallback(() => {
+    getData("柔術");
   }, []);
 
   return (
@@ -29,8 +40,14 @@ export const News: FC = memo(() => {
       </Center>
     ) : (
       <>
-      <Category onChange={onChangeSerch} serch={serch} onClick={categorySerch} />
-      <Box maxW="1200px" mx="auto" mt={4} px={2}>
+      <Category
+        onClickSerch={onClickSerch} 
+        onClickMMA={onClickMMA} 
+        onClickBoxing={onClickBoxing} 
+        onClickKickBoxing={onClickKickBoxing} 
+        onClickJiujitsu={onClickJiujitsu} 
+      />
+      <Box maxW="1200px" minH="80vh" mx="auto" mt={4} px={2}>
         {articles.map(({ url, urlToImage, title, description }) => (
           <Link key={url} href={url} _hover={{ textDecoration: "none" }} >
             <Flex 
