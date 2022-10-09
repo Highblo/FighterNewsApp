@@ -17,7 +17,7 @@ export const SerchInput: FC<Props> = (props) => {
   return (
     <HStack>
       <Input size={{ base: "sm", md: "md" }} placeholder="検索" value={serch} onChange={onChangeCategory} />
-      <Button fontSize={{ base: "sm", md: "md" }} onClick={onClick} bg="gray.600">検索</Button>
+      <Button _hover={{ bg: "cyan.400" }} fontSize={{ base: "sm", md: "md" }} onClick={onClick} bg="gray.600">検索</Button>
     </HStack>
   );
 };
