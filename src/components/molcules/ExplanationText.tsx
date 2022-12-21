@@ -10,8 +10,10 @@ export const ExplanationText: FC<Props> = (props) => {
   const { text1, text2 } = props;
   return (
     <Box mb={2}>
-        <Text fontWeight="bold" fontSize="lg">{text1}</Text>
-        <Text>{text2}</Text>
+      <Text fontWeight="bold" fontSize="lg">
+        {text1}
+      </Text>
+      <Text>{text2}</Text>
     </Box>
   );
 };

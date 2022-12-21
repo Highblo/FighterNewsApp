@@ -1,11 +1,19 @@
-import { createContext, ReactNode, useState, Dispatch, SetStateAction } from "react";
+import {
+  createContext,
+  ReactNode,
+  useState,
+  Dispatch,
+  SetStateAction,
+} from "react";
 
 type SerchContextType = {
   serch: string;
-  setSerch: Dispatch<SetStateAction<string>>
+  setSerch: Dispatch<SetStateAction<string>>;
 };
 
-export const SerchContext = createContext<SerchContextType>({} as SerchContextType);
+export const SerchContext = createContext<SerchContextType>(
+  {} as SerchContextType
+);
 
 export const SerchProvider = (props: { children: ReactNode }) => {
   const { children } = props;

@@ -11,8 +11,15 @@ type Props = {
 export const PrimaryButton: FC<Props> = (props) => {
   const { children, disabled = false, loading, onClick } = props;
   return (
-    <Button onClick={onClick} bg="cyan.400" color="white" _hover={{ opacity: 0.8 }} isLoading={loading} disabled={disabled}>
+    <Button
+      onClick={onClick}
+      bg="cyan.400"
+      color="white"
+      _hover={{ opacity: 0.8 }}
+      isLoading={loading}
+      disabled={disabled}
+    >
       {children}
     </Button>
   );
-}; 
+};

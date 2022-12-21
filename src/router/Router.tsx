@@ -14,19 +14,22 @@ export const Router: FC = memo(() => {
         <Login />
       </Route>
       <SerchProvider>
-        <Route path="/news" render={({ match: {url} }) => (
-          <Switch>
-            {NewsRoutes.map((route) => (
-              <Route 
-                key={route.path} 
-                path={`${url}${route.path}`}
-                exact={route.exact}
-              >
-                <PageLayout>{route.children}</PageLayout>
-              </Route>
-            ))}
-          </Switch>
-        )} />
+        <Route
+          path="/news"
+          render={({ match: { url } }) => (
+            <Switch>
+              {NewsRoutes.map((route) => (
+                <Route
+                  key={route.path}
+                  path={`${url}${route.path}`}
+                  exact={route.exact}
+                >
+                  <PageLayout>{route.children}</PageLayout>
+                </Route>
+              ))}
+            </Switch>
+          )}
+        />
       </SerchProvider>
       <Route path="*">
         <Page404 />

@@ -6,16 +6,16 @@ export const NewsRoutes = [
   {
     path: "/",
     exact: true,
-    children: <News /> 
+    children: <News />,
   },
   {
     path: "/MySite",
     exact: false,
-    children: <MySite />
+    children: <MySite />,
   },
   {
     path: "*",
     exact: false,
-    children: <Page404 />
-  }
+    children: <Page404 />,
+  },
 ];
